@@ -15,10 +15,18 @@ def create_segment():
 
 
 starting_positions = [(0, 0), (-20, 0), (-40, 0)]
+segments = []
 
 for position in starting_positions:
     seg = create_segment()
     seg.goto(position)
+    segments.append(seg)
+
+game_is_active = True
+
+while game_is_active:
+    for seg in segments:
+        seg.forward(20)
 
 
 
